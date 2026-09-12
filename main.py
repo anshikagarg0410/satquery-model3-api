@@ -470,10 +470,10 @@ def find_sentinel2_image(
         )
         .select(
             [
-                "B02",
-                "B03",
-                "B04",
-                "B08",
+                "B2",
+                "B3",
+                "B4",
+                "B8",
                 "B11",
                 "B12"
             ]
@@ -730,10 +730,10 @@ def get_satellite_arrays(
     s2_data = download_numpy_image(
         s2_image,
         [
-            "B02",
-            "B03",
-            "B04",
-            "B08",
+            "B2",
+            "B3",
+            "B4",
+            "B8",
             "B11",
             "B12"
         ],
@@ -774,35 +774,12 @@ def extract_model3_features(
     # Sentinel-2
     # --------------------------------------------------------
 
-    B02 = np.asarray(
-        s2_data["B02"],
-        dtype=np.float32
-    )
-
-    B03 = np.asarray(
-        s2_data["B03"],
-        dtype=np.float32
-    )
-
-    B04 = np.asarray(
-        s2_data["B04"],
-        dtype=np.float32
-    )
-
-    B08 = np.asarray(
-        s2_data["B08"],
-        dtype=np.float32
-    )
-
-    B11 = np.asarray(
-        s2_data["B11"],
-        dtype=np.float32
-    )
-
-    B12 = np.asarray(
-        s2_data["B12"],
-        dtype=np.float32
-    )
+    B02 = np.asarray(s2_data["B2"], dtype=np.float32)
+    B03 = np.asarray(s2_data["B3"], dtype=np.float32)
+    B04 = np.asarray(s2_data["B4"], dtype=np.float32)
+    B08 = np.asarray(s2_data["B8"], dtype=np.float32)
+    B11 = np.asarray(s2_data["B11"], dtype=np.float32)
+    B12 = np.asarray(s2_data["B12"], dtype=np.float32)
 
     for band in [
         B02,
