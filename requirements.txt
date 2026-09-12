@@ -4,3 +4,6 @@ xgboost
 numpy
 pydantic
 scikit-learn
+requests
+earthengine-api
+google-auth
