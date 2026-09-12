@@ -135,7 +135,7 @@
 #         )
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
-from datetime import date, datetime, timedelta
+from datetime import date as Date, datetime, timedelta
 import os
 import io
 import json
@@ -336,11 +336,10 @@ class PredictionRequest(BaseModel):
         description="Longitude in decimal degrees"
     )
 
-    date: date = Field(
+    date: Date = Field(
         ...,
         description="Requested imagery date YYYY-MM-DD"
     )
-
 
 # ============================================================
 # BASIC HELPERS
